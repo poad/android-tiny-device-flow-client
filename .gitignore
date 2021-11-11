@@ -83,3 +83,16 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+*.iml
+.gradle
+local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+app/src/main/res/raw/oauth.properties
+app/src/main/res/raw/oauth.json
+app/src/main/res/raw/amplifyconfiguration.json

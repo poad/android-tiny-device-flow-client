@@ -1,1 +1,9 @@
-# android-tiny-device-flow-client
+# OAuth 2.0 Device Flow Example
+
+## Setup
+
+1. Create an Auth0 application
+2. Enable `Device Code` Grants in Advanced settings
+    1. Disable Client Credentials
+    2. Enable `Device Code`
+3. create the app/src/main/res/raw/oauth.properties from ./oauth.properties.template
