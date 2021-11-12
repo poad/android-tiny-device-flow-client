@@ -70,7 +70,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.amplifyframework/core
     implementation 'com.amplifyframework:core:1.28.3'
     // https://mvnrepository.com/artifact/com.amplifyframework/aws-api
-    implementation 'com.amplifyframework:aws-api:1.28.3'
+    implementation 'com.amplifyframework:aws-api:1.29.0'
     // https://mvnrepository.com/artifact/com.amplifyframework/aws-auth-cognito
     implementation 'com.amplifyframework:aws-auth-cognito:1.29.0'
 
