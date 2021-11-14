@@ -175,6 +175,10 @@ class MainActivity() : AppCompatActivity() {
                                     R.string.extra_key_access_token.toString(),
                                     response.accessToken
                                 )
+                                nextIntent.putExtra(
+                                    R.string.extra_key_refresh_token.toString(),
+                                    response.refreshToken
+                                )
                                 startActivity(
                                     nextIntent
                                 )
