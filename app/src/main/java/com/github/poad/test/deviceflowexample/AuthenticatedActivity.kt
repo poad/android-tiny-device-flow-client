@@ -12,8 +12,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.github.poad.test.deviceflowexample.api.UserInfoApiClient
 import com.github.poad.test.deviceflowexample.api.Client
-import com.amazonaws.mobile.client.AWSMobileClient
-import com.amplifyframework.core.Amplify
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -35,9 +33,7 @@ class AuthenticatedActivity : AppCompatActivity() {
         setContentView(R.layout.activity_authenticated)
 
         val config = OAuthConfig.load(resources)
-        config.useAmplify
-        val token = this.intent.getStringExtra(
-            if (config.useAmplify) { R.string.extra_key_access_token.toString() } else { R.string.extra_key_id_token.toString() })
+        val token = this.intent.getStringExtra(R.string.extra_key_access_token.toString())
         if (token == null) {
             startActivity(
                 Intent(
@@ -54,25 +50,16 @@ class AuthenticatedActivity : AppCompatActivity() {
         }
         userIndoModel.userInfo.observe(this, userInfoObserver)
 
-        Log.i("token", token)
+//        Log.i("token", token)
 
         CoroutineScope(Dispatchers.Main + SupervisorJob()).launch {
             try {
-                if (config.useAmplify) {
-                    val cognitoAuthPlugin = Amplify.Auth.getPlugin("awsCognitoAuthPlugin")
-                    val mobileClient = cognitoAuthPlugin.escapeHatch as AWSMobileClient
-                    val userInfo = mobileClient.federatedSignIn(config.provider, token)
-
-                    val name = userInfo.userState.name
-                    userIndoModel.userInfo.postValue(name)
-                } else {
-                    val client = Client(config.apiEndpoint, UserInfoApiClient::class.java, token)
-                        .createService()
-                    val apiPath = config.userInfoApi
-                    val userInfo = client.userInfo(apiPath)
-                    val name = userInfo.username ?: userInfo.name
-                    userIndoModel.userInfo.postValue(name)
-                }
+                val client = Client(config.apiEndpoint, UserInfoApiClient::class.java, token)
+                    .createService()
+                val apiPath = config.userInfoApi
+                val userInfo = if (config.httpGet) { client.userInfoGet(apiPath) } else { client.userInfoPost(apiPath) }
+                val name = userInfo.username ?: userInfo.name
+                userIndoModel.userInfo.postValue(name)
             } catch (e: Exception) {
                 Log.e("[ERROR]", e.toString())
             }
