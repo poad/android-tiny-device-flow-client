@@ -15,7 +15,9 @@ data class OAuthConfig(
     val apiEndpoint: String,
     val userInfoApi: String,
     val audience: String,
-    val httpGet: Boolean
+    val httpGet: Boolean,
+    val useAmplify: Boolean,
+    val provider: String?,
 ) {
     companion object {
         fun load(resources: Resources): OAuthConfig {
@@ -35,7 +37,12 @@ data class OAuthConfig(
                 when (config.has("http_get")) {
                     true -> config.getBoolean("http_get")
                     else -> false
-                }
+                },
+                when (config.has("use_amplify")) {
+                    true -> config.getBoolean("use_amplify")
+                    else -> false
+                },
+                config.optString("provider")
             )
         }
     }
