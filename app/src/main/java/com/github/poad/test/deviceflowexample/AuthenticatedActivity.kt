@@ -68,31 +68,20 @@ class AuthenticatedActivity : AppCompatActivity() {
                     val mobileClient = cognitoAuthPlugin.escapeHatch as AWSMobileClient
 
                     val idPoolId = mobileClient.configuration
-                        ?.let {
-                            it.optJsonObject("CredentialsProvider")
-                                ?.let { credentialsProvider ->
-                                    credentialsProvider.optJSONObject("CognitoIdentity")
-                                        ?.let { cognitoIdentity ->
-                                            cognitoIdentity.optJSONObject("Default")
-                                                ?.optString("PoolId")
-                                        }
-                                }
-                        }
+                        ?.optJsonObject("CredentialsProvider")
+                        ?.optJSONObject("CognitoIdentity")
+                        ?.optJSONObject("Default")
+                        ?.optString("PoolId")
 
                     val options = FederatedSignInOptions.builder()
 
                     val userInfo = mobileClient.federatedSignIn(
                         mobileClient.configuration
-                            ?.let {
-                                it.optJsonObject("Auth")
-                                    ?.let { auth ->
-                                        auth.optJSONObject("Default")
-                                            ?.let { authDefault ->
-                                                authDefault.optJSONObject("OAuth")
-                                                    ?.optString("IdentityProvider")
-                                            }
-                                    }
-                            } ?: config.provider,
+                            ?.optJsonObject("Auth")
+                            ?.optJSONObject("Default")
+                            ?.optJSONObject("OAuth")
+                            ?.optString("IdentityProvider")
+                            ?: config.provider,
                         token,
                         if (idPoolId != null) {
                             options.cognitoIdentityId(idPoolId)
