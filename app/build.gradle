@@ -44,7 +44,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2-native-mt'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt'
@@ -73,7 +73,7 @@ dependencies {
     implementation "com.amplifyframework:aws-auth-cognito:${amplify_version}"
 
     // https://mvnrepository.com/artifact/com.amazonaws/aws-android-sdk-mobile-client
-    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.36.0'
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.35.0'
     // https://mvnrepository.com/artifact/com.amazonaws/aws-android-sdk-cognito
     implementation 'com.amazonaws:aws-android-sdk-cognito:2.20.1'
 }
