@@ -152,7 +152,7 @@ class MainActivity() : AppCompatActivity() {
                             break
                         }
 
-//                        Log.v("device code", "exire at " + expiration.toLocalDate())
+//                        Log.v("device code", "expire at " + expiration.toLocalDate())
 
                         try {
                             if (Objects.nonNull(deviceCode)) {
