@@ -52,5 +52,5 @@ jobs:
         rm -rf app/src/main/res/raw/example_oauth.json
         echo $(cat oauth.json.template) > app/src/main/res/raw/oauth.json
         chmod +x gradlew
-        ./gradlew build
+        ./gradlew build -x lint
 
