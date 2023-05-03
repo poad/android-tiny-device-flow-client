@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace "com.github.poad.test.deviceflowexample"
     compileSdkVersion 33
     buildToolsVersion = "30.0.3"
 
