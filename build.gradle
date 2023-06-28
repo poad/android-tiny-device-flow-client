@@ -2,7 +2,7 @@
 buildscript {
     ext.kotlin_version = "1.8.22"
     ext.retrofitVersion = '2.9.0'
-    ext.amplify_version = '2.8.6'
+    ext.amplify_version = '2.8.7'
 
     repositories {
         google()
