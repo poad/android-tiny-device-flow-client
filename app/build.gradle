@@ -7,13 +7,13 @@ plugins {
 
 android {
     namespace "com.github.poad.test.deviceflowexample"
-    compileSdkVersion 33
+    compileSdkVersion 34
     buildToolsVersion = "30.0.3"
 
     defaultConfig {
         applicationId "com.github.poad.test.deviceflowexample"
         minSdkVersion 29
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
