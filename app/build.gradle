@@ -7,13 +7,13 @@ plugins {
 
 android {
     namespace "com.github.poad.test.deviceflowexample"
-    compileSdkVersion 34
-    buildToolsVersion = "34.0.0"
+    buildToolsVersion = "35.0.0"
 
     defaultConfig {
         applicationId "com.github.poad.test.deviceflowexample"
-        minSdkVersion 29
-        targetSdkVersion 34
+        minSdkVersion 35
+        compileSdk 35
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 
@@ -30,8 +30,12 @@ android {
     }
     compileOptions {
         coreLibraryDesugaringEnabled true
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
@@ -50,8 +54,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3-native-mt'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3-native-mt'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.6'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.7'
     implementation 'androidx.activity:activity-ktx:1.9.3'
 
     // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
@@ -71,7 +75,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.amplifyframework/core
     implementation "com.amplifyframework:core:${amplify_version}"
     // https://mvnrepository.com/artifact/com.amplifyframework/aws-api
-    implementation "com.amplifyframework:aws-api:${amplify_version}"
+    implementation "com.amplifyframework:aws-api:$amplify_version"
     // https://mvnrepository.com/artifact/com.amplifyframework/aws-auth-cognito
     implementation "com.amplifyframework:aws-auth-cognito:${amplify_version}"
 
