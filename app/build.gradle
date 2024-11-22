@@ -80,7 +80,7 @@ dependencies {
     implementation "com.amplifyframework:aws-auth-cognito:${amplify_version}"
 
     // https://mvnrepository.com/artifact/com.amazonaws/aws-android-sdk-mobile-client
-    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.77.0'
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.77.1'
     // https://mvnrepository.com/artifact/com.amazonaws/aws-android-sdk-cognito
     implementation 'com.amazonaws:aws-android-sdk-cognito:2.20.1'
 }
