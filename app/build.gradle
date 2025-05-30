@@ -51,7 +51,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.16'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3-native-mt'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2'
