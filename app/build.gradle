@@ -6,14 +6,14 @@ plugins {
 }
 
 android {
-    namespace "com.github.poad.test.deviceflowexample"
-    buildToolsVersion = "35.0.0"
+    namespace = "com.github.poad.test.deviceflowexample"
+    buildToolsVersion = "36.0.0"
 
     defaultConfig {
         applicationId "com.github.poad.test.deviceflowexample"
-        minSdkVersion 35
-        compileSdk 35
-        targetSdkVersion 35
+        minSdkVersion 36
+        compileSdk 36
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
 
@@ -29,7 +29,7 @@ android {
         enabled = true
     }
     compileOptions {
-        coreLibraryDesugaringEnabled true
+        coreLibraryDesugaringEnabled = true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
