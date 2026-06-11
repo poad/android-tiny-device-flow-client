@@ -1,17 +1,15 @@
 plugins {
     id 'com.android.application'
-    id 'android'
 }
 
 android {
     namespace = "com.github.poad.test.deviceflowexample"
-    buildToolsVersion = "36.0.0"
+    buildToolsVersion = "37.0.0"
 
     defaultConfig {
         applicationId "com.github.poad.test.deviceflowexample"
-        minSdkVersion 36
-        targetSdkVersion 36
-        compileSdkVersion 36
+        minSdkVersion 37
+        compileSdkVersion 37
         versionCode 1
         versionName "1.0"
 
@@ -28,14 +26,14 @@ android {
     }
     compileOptions {
         coreLibraryDesugaringEnabled = true
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.18.0'
+    implementation 'androidx.core:core-ktx:1.19.0'
     implementation 'androidx.leanback:leanback:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.7.1'
 
@@ -45,7 +43,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.3.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.4.0'
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3-native-mt'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0'
